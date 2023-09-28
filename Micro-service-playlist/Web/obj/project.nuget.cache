@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "EFEKanL1r9mtyjZN2Egx94x8Hrx6fnMxedFdIlQVj39zne8wqQrDEHz8crsyqFW4pnry1nVQO3GeIwsQzhcWNA==",
+  "dgSpecHash": "+eZcswdlObmzFtNKp3vbx52ThQOjrZpfvnfBv5hXG8yIaJhJcICvFTFIW3hFfNwaDvcTCwIAC/vcu6Ht99hUMA==",
   "success": true,
   "projectFilePath": "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\Web\\Web.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\antonin\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.10\\microsoft.aspnetcore.openapi.7.0.10.nupkg.sha512",
     "C:\\Users\\antonin\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
-    "C:\\Users\\antonin\\.nuget\\packages\\microsoft.openapi\\1.4.3\\microsoft.openapi.1.4.3.nupkg.sha512",
+    "C:\\Users\\antonin\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\antonin\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.19.4\\microsoft.visualstudio.azure.containers.tools.targets.1.19.4.nupkg.sha512",
     "C:\\Users\\antonin\\.nuget\\packages\\swashbuckle.aspnetcore\\6.5.0\\swashbuckle.aspnetcore.6.5.0.nupkg.sha512",
     "C:\\Users\\antonin\\.nuget\\packages\\swashbuckle.aspnetcore.swagger\\6.5.0\\swashbuckle.aspnetcore.swagger.6.5.0.nupkg.sha512",
     "C:\\Users\\antonin\\.nuget\\packages\\swashbuckle.aspnetcore.swaggergen\\6.5.0\\swashbuckle.aspnetcore.swaggergen.6.5.0.nupkg.sha512",
