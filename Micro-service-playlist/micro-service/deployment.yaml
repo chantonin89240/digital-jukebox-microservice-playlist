@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: playlist
+  labels:
+    app: web
+spec:
+  selector:
+    matchLabels:
+      app: web
+      tier: playlist
+  template:
+    metadata:
+      labels:
+        app: web
+        tier: playlist
+    spec:
+      containers:
+        - image: antonin89000/web:latest
+          name: playlist
+          env:
+            - name: PLAYLIST_DB_HOST
+              value: playlist-mysql
+            - name: PALYLIST_DB_PASSWORD
+              value: monSuperPassword2
+          ports:
+            - containerPort: 80
+              name: playlist
