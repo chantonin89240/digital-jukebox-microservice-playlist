@@ -1,7 +1,1 @@
-﻿namespace Domain
-{
-    public class GlobalUsing
-    {
-
-    }
-}
+﻿global using Domain.Entities;

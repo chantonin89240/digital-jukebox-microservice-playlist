@@ -1,0 +1,29 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: playlist-web-ir
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`playlist.local`)
+    kind: Rule
+    services:
+    - name: playlist-svc
+      port: 80
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: playlist-websecure-ir
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`playlist.local`)
+    kind: Rule
+    services:
+    - name: playlist-svc
+      port: 80
+  tls:
+    certResolver: default

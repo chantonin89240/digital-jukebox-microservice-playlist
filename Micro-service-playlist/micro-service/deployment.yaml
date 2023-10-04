@@ -1,3 +1,76 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: mssql
+type: Opaque
+data:
+  MSSQL_SA_PASSWORD: TXlDMG05bCZ4UEBzc3cwcmQ=
+---
+# PVC for PlayListService
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: playlist-service-pv-claim
+  labels:
+    app: PlayListService
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2G
+---
+# Database for PlaylistService
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: playlistservicedatabase
+spec:
+  selector:
+    matchLabels:
+      app: mssql
+  template:
+    metadata:
+      labels:
+        app: mssql
+    spec:
+      containers:
+        - image: mcr.microsoft.com/mssql/server:2022-latest
+          name: mssql
+          ports:
+            - containerPort: 1433
+          env:
+            - name: MSSQL_PID
+              value: "Developer"
+            - name: ACCEPT_EULA
+              value: "Y"
+            - name: MSSQL_SA_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: mssql
+                  key: MSSQL_SA_PASSWORD
+          volumeMounts:
+            - name: mssqldb
+              mountPath: /var/opt/mssql
+      volumes:
+        - name: mssqldb
+          persistentVolumeClaim:
+            claimName: playlist-service-pv-claim
+---
+# Service pour PlayListService
+apiVersion: v1
+kind: Service
+metadata:
+  name: playlistservicedatabase
+spec:
+  selector:
+    app: mssql
+  ports:
+    - protocol: TCP
+      port: 1433
+      targetPort: 1433
+  type: NodePort
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -17,12 +90,15 @@ spec:
     spec:
       containers:
         - image: antonin89000/web:latest
-          name: playlist
-          env:
-            - name: PLAYLIST_DB_HOST
-              value: playlist-mysql
-            - name: PALYLIST_DB_PASSWORD
-              value: monSuperPassword2
+          name: microserviceplaylist
           ports:
             - containerPort: 80
-              name: playlist
+              protocol: TCP
+          env:
+            - name: ASPNETCORE_URLS
+              value: http://+:80
+            - name: WebApiBaseAddress
+              value: http://webapi
+            - name: ConnectionStrings
+              value: |
+                {"DefaultConnection": "Server=playlistservicedatabase;Initial Catalog=db-test-g2;Persist Security Info=False;User ID=sa;Password=MyC0m9l&xP@ssw0rd;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"}

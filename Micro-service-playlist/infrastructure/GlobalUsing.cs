@@ -1,7 +1,1 @@
-﻿namespace infrastructure
-{
-    public class GlobalUsing
-    {
-
-    }
-}
+﻿global using Microsoft.EntityFrameworkCore;

@@ -12,7 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "infrastructure", "infrastructure\infrastructure.csproj", "{A76DF41F-EA48-4A20-A139-72F53B625CA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "infrastructure\Infrastructure.csproj", "{A76DF41F-EA48-4A20-A139-72F53B625CA8}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Domain\Domain.csproj", "{3233A4F5-35D7-448D-9E28-A15606E45D72}"
 EndProject
@@ -36,16 +36,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "micro-service", "micro-serv
 	ProjectSection(SolutionItems) = preProject
 		micro-service\deployment.yaml = micro-service\deployment.yaml
 		micro-service\ingress.yaml = micro-service\ingress.yaml
-		micro-service\persistence.yaml = micro-service\persistence.yaml
 		micro-service\service.yaml = micro-service\service.yaml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "database", "database", "{E70F1BCD-2740-4F62-B3B5-6C1A815205BD}"
-	ProjectSection(SolutionItems) = preProject
-		database\deployment.yaml = database\deployment.yaml
-		database\ingress.yaml = database\ingress.yaml
-		database\persistence.yaml = database\persistence.yaml
-		database\service.yaml = database\service.yaml
 	EndProjectSection
 EndProject
 Global
@@ -82,7 +73,6 @@ Global
 		{2A6F5F5B-A196-4BF4-854D-E047EE01D9B4} = {6DC38CD7-36B6-45C2-8D6A-8CBAA2149622}
 		{1CC69D04-56AB-49C1-A73D-13EED6325E6A} = {2A6F5F5B-A196-4BF4-854D-E047EE01D9B4}
 		{33B1C039-ECF1-41C8-8724-F1D7EC92ABFF} = {2A6F5F5B-A196-4BF4-854D-E047EE01D9B4}
-		{E70F1BCD-2740-4F62-B3B5-6C1A815205BD} = {2A6F5F5B-A196-4BF4-854D-E047EE01D9B4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1E8BDA48-02AD-4047-B07E-659E2DA68C5B}
