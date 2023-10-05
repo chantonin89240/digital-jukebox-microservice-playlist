@@ -1,19 +1,16 @@
 ﻿using Domain.Entities;
 
-namespace infrastructure.Data
+namespace Infrastructure.Data
 {
     public class PlaylistDbContext : DbContext
     {
-        public DbSet<Playlist>? Playlists { get; set; }
-        public DbSet<SongHistory>? SongHistorys { get; set; }
-        public DbSet<SongPlaylist>? SongPlaylists { get; set; }
-        public DbSet<Song> Songs { get; set; }
+        public DbSet<Playlist> Playlists => Set<Playlist>();
+        public DbSet<SongHistory> SongHistorys => Set<SongHistory>();
+        public DbSet<SongPlaylist> SongPlaylists => Set<SongPlaylist>();
+        public DbSet<Song> Songs => Set<Song>();
 
         public PlaylistDbContext(DbContextOptions<PlaylistDbContext> options) : base(options) { }
 
-        public PlaylistDbContext()
-        {
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,6 +26,8 @@ namespace infrastructure.Data
                 .HasOne(ps => ps.Song)
                 .WithMany(s => s.PlaylistSongs)
                 .HasForeignKey(ps => ps.SongId);
+
+            base.OnModelCreating(modelBuilder);
         }
 
     }

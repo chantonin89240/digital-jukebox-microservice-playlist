@@ -239,18 +239,6 @@
           }
         }
       },
-      "Microsoft.EntityFrameworkCore.Tools/7.0.11": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.Design": "7.0.11"
-        },
-        "compile": {
-          "lib/net6.0/_._": {}
-        },
-        "runtime": {
-          "lib/net6.0/_._": {}
-        }
-      },
       "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
         "type": "package",
         "build": {
@@ -1176,7 +1164,6 @@
         "framework": ".NETCoreApp,Version=v7.0",
         "dependencies": {
           "Domain": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "7.0.11",
           "Microsoft.EntityFrameworkCore.SqlServer": "7.0.11"
         },
         "compile": {
@@ -1499,31 +1486,6 @@
         "lib/net6.0/Microsoft.EntityFrameworkCore.SqlServer.xml",
         "microsoft.entityframeworkcore.sqlserver.7.0.11.nupkg.sha512",
         "microsoft.entityframeworkcore.sqlserver.nuspec"
-      ]
-    },
-    "Microsoft.EntityFrameworkCore.Tools/7.0.11": {
-      "sha512": "dhNLVQsMi6E4XEkVNmxbaNkLd06Q0ipwgiBz9k9rSjzaNJQVUA+/N6lsKRWXjFjTPgsaVpos+KN5Iimy6TQ2Yg==",
-      "type": "package",
-      "path": "microsoft.entityframeworkcore.tools/7.0.11",
-      "hasTools": true,
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "Icon.png",
-        "lib/net6.0/_._",
-        "microsoft.entityframeworkcore.tools.7.0.11.nupkg.sha512",
-        "microsoft.entityframeworkcore.tools.nuspec",
-        "tools/EntityFrameworkCore.PS2.psd1",
-        "tools/EntityFrameworkCore.PS2.psm1",
-        "tools/EntityFrameworkCore.psd1",
-        "tools/EntityFrameworkCore.psm1",
-        "tools/about_EntityFrameworkCore.help.txt",
-        "tools/init.ps1",
-        "tools/net461/any/ef.exe",
-        "tools/net461/win-arm64/ef.exe",
-        "tools/net461/win-x86/ef.exe",
-        "tools/netcoreapp2.0/any/ef.dll",
-        "tools/netcoreapp2.0/any/ef.runtimeconfig.json"
       ]
     },
     "Microsoft.Extensions.ApiDescription.Server/6.0.5": {
@@ -3439,18 +3401,15 @@
     },
     "Infrastructure/1.0.0": {
       "type": "project",
-      "path": "../infrastructure/Infrastructure.csproj",
-      "msbuildProject": "../infrastructure/Infrastructure.csproj"
+      "path": "../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../Infrastructure/Infrastructure.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Application >= 1.0.0",
       "Infrastructure >= 1.0.0",
-      "Microsoft.EntityFrameworkCore >= 7.0.11",
       "Microsoft.EntityFrameworkCore.Design >= 7.0.11",
-      "Microsoft.EntityFrameworkCore.SqlServer >= 7.0.11",
-      "Microsoft.EntityFrameworkCore.Tools >= 7.0.11",
       "Microsoft.VisualStudio.Azure.Containers.Tools.Targets >= 1.19.4",
       "Swashbuckle.AspNetCore >= 6.5.0"
     ]
@@ -3481,8 +3440,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://pkgs.dev.azure.com/2024-D2-P2-G5/ProjectTwo-public/_packaging/NugetPackageDi/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
@@ -3491,8 +3449,8 @@
             "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\Application\\Application.csproj": {
               "projectPath": "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\Application\\Application.csproj"
             },
-            "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\infrastructure\\Infrastructure.csproj"
+            "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -3507,21 +3465,7 @@
       "net7.0": {
         "targetAlias": "net7.0",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": {
-            "target": "Package",
-            "version": "[7.0.11, )"
-          },
           "Microsoft.EntityFrameworkCore.Design": {
-            "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
-            "target": "Package",
-            "version": "[7.0.11, )"
-          },
-          "Microsoft.EntityFrameworkCore.SqlServer": {
-            "target": "Package",
-            "version": "[7.0.11, )"
-          },
-          "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
             "suppressParent": "All",
             "target": "Package",

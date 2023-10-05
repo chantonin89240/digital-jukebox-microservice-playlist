@@ -1,8 +1,3 @@
-using infrastructure.Data;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using System;
 
 var builder = WebApplication.CreateBuilder(args);
 

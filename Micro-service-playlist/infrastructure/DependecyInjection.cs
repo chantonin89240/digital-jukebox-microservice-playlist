@@ -1,8 +1,7 @@
-﻿using infrastructure.Data;
+﻿using Infrastructure.Data;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 
-namespace infrastructure
+namespace Microsoft.Extensions.DependencyInjection
 {
     public static class DependencyInjection
     {

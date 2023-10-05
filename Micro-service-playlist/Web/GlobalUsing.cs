@@ -1,1 +1,1 @@
-﻿global using infrastructure;
+﻿global using Infrastructure;
