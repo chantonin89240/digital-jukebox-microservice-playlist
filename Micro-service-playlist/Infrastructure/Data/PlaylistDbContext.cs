@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using System.Reflection;
 
 namespace Infrastructure.Data
 {
@@ -14,6 +15,15 @@ namespace Infrastructure.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Playlist>()
+                .HasKey(sh => sh.PlaylistId);
+
+            modelBuilder.Entity<Song>()
+                .HasKey(sh => sh.SongId);
+
+            modelBuilder.Entity<SongHistory>()
+                .HasKey(sh => sh.HistoryId);
+
             modelBuilder.Entity<SongPlaylist>()
                 .HasKey(ps => new { ps.PlaylistId, ps.SongId });
 
@@ -26,6 +36,8 @@ namespace Infrastructure.Data
                 .HasOne(ps => ps.Song)
                 .WithMany(s => s.PlaylistSongs)
                 .HasForeignKey(ps => ps.SongId);
+
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
 
             base.OnModelCreating(modelBuilder);
         }

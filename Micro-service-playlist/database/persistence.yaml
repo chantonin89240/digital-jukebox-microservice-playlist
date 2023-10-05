@@ -1,0 +1,13 @@
+# PVC for PlayListService
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: playlist-service-pv-claim
+  labels:
+    app: PlaylistService
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 2G

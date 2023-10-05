@@ -9,19 +9,17 @@ namespace Microsoft.Extensions.DependencyInjection
         {
             var connectionString = configuration.GetConnectionString("DefaultConnection");
 
-            services.AddDbContext<PlaylistDbContext>((sp, options) =>
+            services.AddDbContext<PlaylistDbContext>((options) =>
             {
                 options.UseSqlServer(connectionString);
             });
-
-            services.AddScoped(provider => provider.GetRequiredService<PlaylistDbContext>());
 
             //services.AddScoped<IDomainEventService, DomainEventService>();
 
             //services.AddScoped<ApplicationDbContextInitialiser>();
 
-            //var context = services.BuildServiceProvider().GetRequiredService<PlaylistDbContext>();
-            //context.Database.Migrate();
+            var context = services.BuildServiceProvider().GetRequiredService<PlaylistDbContext>();
+            context.Database.Migrate();
 
             return services;
         }
