@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace infrastructure
+namespace Infrastructure.Data
 {
-    internal class DependecyInjection
+    public class PlaylistDbContextInitialiser
     {
+        public PlaylistDbContextInitialiser() { }
     }
 }

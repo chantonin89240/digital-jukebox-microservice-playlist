@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: playlist
+  labels:
+    app: web
+spec:
+  selector:
+    matchLabels:
+      app: web
+      tier: playlist
+  template:
+    metadata:
+      labels:
+        app: web
+        tier: playlist
+    spec:
+      containers:
+        - image: antonin89000/web:latest
+          name: microserviceplaylist
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          env:
+            - name: ASPNETCORE_URLS
+              value: http://+:80
+            - name: WebApiBaseAddress
+              value: http://webapi
+            - name: ConnectionStrings
+              value: |
+                {"DefaultConnection": "Server=playlistservicedatabase;Initial Catalog=db-test-g2;Persist Security Info=False;User ID=sa;Password=TW9uU3VwZXJQYXNzd29yZDI=;MultipleActiveResultSets=True;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"}

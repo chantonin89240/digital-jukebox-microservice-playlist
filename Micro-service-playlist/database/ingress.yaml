@@ -1,0 +1,13 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: playlistdb-web-ir
+spec:
+  entryPoints:
+    - web
+  routes:
+  - match: Host(`playlistdb.localhost`)
+    kind: Rule
+    services:
+    - name: playlistservicedatabase
+      port: 1437
