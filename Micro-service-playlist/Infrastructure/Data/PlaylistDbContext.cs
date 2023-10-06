@@ -1,5 +1,6 @@
 ﻿using Domain.Entities;
 using System.Reflection;
+using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
 {
