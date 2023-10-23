@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Data.Configurations;
 
-public class SongHistoryConfiguration
+public class SongHistoryConfiguration : IEntityTypeConfiguration<SongHistory>
 {
     public void Configure(EntityTypeBuilder<SongHistory> builder)
     {

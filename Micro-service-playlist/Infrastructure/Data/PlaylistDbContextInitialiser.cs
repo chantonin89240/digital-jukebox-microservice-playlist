@@ -94,16 +94,28 @@ public class PlaylistDbContextInitialiser
         // Seed, if necessary
         if (!_context.Playlists.Any())
         {
+            _context.Songs.Add(new Song
+            {
+                Title = "test1"
+            });
+            _context.Songs.Add(new Song
+            {
+                Title = "test2"
+            });
+            _context.Songs.Add(new Song
+            {
+                Title = "test3"
+            });
+
             _context.Playlists.Add(new Playlist
             {
-                PlaylistId = 1,
                 Name = "playlistExample",
                 PlayedSongId = 1,
-                PlaylistSongs =
+                PlaylistSongs = new List<SongPlaylist>()
                 {
-                    new SongPlaylist { PlaylistId = 1, SongId = 1, PlaylistOrder = 1 },
-                    new SongPlaylist { PlaylistId = 1, SongId = 2, PlaylistOrder = 3 },
-                    new SongPlaylist { PlaylistId = 1, SongId = 3, PlaylistOrder = 2 },
+                    new SongPlaylist { SongId = 1, PlaylistOrder = 1 },
+                    new SongPlaylist { SongId = 2, PlaylistOrder = 3 },
+                    new SongPlaylist { SongId = 3, PlaylistOrder = 2 },
                 },
                 TotalSong = 3
             });
