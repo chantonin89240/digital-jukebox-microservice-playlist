@@ -1,5 +1,4 @@
 ﻿using Domain.Entities;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
@@ -9,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace Infrastructure.Data.Configurations;
 
-public class SongHistoryConfiguration
+public class SongConfiguration
 {
-    public void Configure(EntityTypeBuilder<SongHistory> builder)
+    public void Configure(EntityTypeBuilder<Song> builder)
     {
-        builder.HasKey(ps => new { ps.HistoryId });
+        builder.HasKey(ps => new { ps.SongId });
     }
 }
