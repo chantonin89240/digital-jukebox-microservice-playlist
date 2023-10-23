@@ -13,7 +13,7 @@ builder.Services.AddPersistenceServices(builder.Configuration); //DI de la couch
 
 var app = builder.Build();
 
-builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+//builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
 
 //CreateHostBuilder(args).Build().Run();
 
