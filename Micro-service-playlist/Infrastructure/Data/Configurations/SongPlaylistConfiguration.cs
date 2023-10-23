@@ -1,12 +1,25 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Domain.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace Infrastructure.Data.Configurations
+namespace Infrastructure.Data.Configurations;
+
+public class SongPlaylistConfiguration : IEntityTypeConfiguration<SongPlaylist>
 {
-    internal class SongPlaylistConfiguration
+    public void Configure(EntityTypeBuilder<SongPlaylist> builder)
     {
+        builder.HasKey(ps => new { ps.PlaylistId, ps.SongId });
+
+        builder
+            .HasOne(ps => ps.Playlist)
+            .WithMany(p => p.PlaylistSongs)
+            .HasForeignKey(ps => ps.PlaylistId);
+
+        builder
+            .HasOne(ps => ps.Song)
+            .WithMany(s => s.PlaylistSongs)
+            .HasForeignKey(ps => ps.SongId);
+
+        //builder.OwnsOne(ps => ps.Song)
     }
 }

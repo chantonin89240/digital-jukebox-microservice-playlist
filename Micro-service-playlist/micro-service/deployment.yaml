@@ -16,6 +16,7 @@ spec:
         tier: playlist
     spec:
       containers:
+
         - image: antonin89000/web:latest
           name: microserviceplaylist
           ports:

@@ -19,8 +19,8 @@ namespace Microsoft.Extensions.DependencyInjection
 
             //services.AddScoped<ApplicationDbContextInitialiser>();
 
-            //var context = services.BuildServiceProvider().GetRequiredService<PlaylistDbContext>();
-            //context.Database.Migrate();
+            var context = services.BuildServiceProvider().GetRequiredService<PlaylistDbContext>();
+            context.Database.MigrateAsync();
 
             return services;
         }

@@ -8,13 +8,12 @@ using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Infrastructure.Data.Configurations
+namespace Infrastructure.Data.Configurations;
+
+public class PlaylistConfiguration : IEntityTypeConfiguration<Playlist>
 {
-    public class PlaylistConfiguration : IEntityTypeConfiguration<Playlist>
+    public void Configure(EntityTypeBuilder<Playlist> builder)
     {
-        public void Configure(EntityTypeBuilder<Playlist> builder)
-        {
-            builder.Property(p => p.PlaylistId).IsRequired();
-        }
+        builder.HasKey(ps => new { ps.PlaylistId });
     }
 }

@@ -1,4 +1,4 @@
-using Infrastructure;
+using Infrastructure.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +13,8 @@ builder.Services.AddPersistenceServices(builder.Configuration); //DI de la couch
 
 var app = builder.Build();
 
+builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
+
 //CreateHostBuilder(args).Build().Run();
 
 //static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -24,12 +26,13 @@ var app = builder.Build();
 //               })
 //               .ConfigureWebHostDefaults(webBuilder =>
 //               {
-                   
+
 //               });
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    await app.InitialiseDatabaseAsync();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
