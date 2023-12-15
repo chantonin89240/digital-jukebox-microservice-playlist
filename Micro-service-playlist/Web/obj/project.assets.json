@@ -1304,6 +1304,7 @@
           "Domain": "1.0.0",
           "FluentValidation": "11.7.1",
           "FluentValidation.DependencyInjectionExtensions": "11.7.1",
+          "Infrastructure": "1.0.0",
           "MediatR": "12.1.1"
         },
         "compile": {
@@ -3765,23 +3766,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\antonin\\.nuget\\packages\\": {},
+    "C:\\Users\\raidr\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\Web\\Web.csproj",
+      "projectUniqueName": "D:\\Auré\\DIIAGE\\D3\\P1-P2\\Playlist-Service\\Micro-service-playlist\\Web\\Web.csproj",
       "projectName": "Web",
-      "projectPath": "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\Web\\Web.csproj",
-      "packagesPath": "C:\\Users\\antonin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\Web\\obj\\",
+      "projectPath": "D:\\Auré\\DIIAGE\\D3\\P1-P2\\Playlist-Service\\Micro-service-playlist\\Web\\Web.csproj",
+      "packagesPath": "C:\\Users\\raidr\\.nuget\\packages\\",
+      "outputPath": "D:\\Auré\\DIIAGE\\D3\\P1-P2\\Playlist-Service\\Micro-service-playlist\\Web\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\antonin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\raidr\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -3790,17 +3791,20 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "C:\\Program Files\\dotnet\\library-packs": {},
+        "C:\\Program Files\\dotnet\\sdk\\7.0.307\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://pkgs.dev.azure.com/2024-D2-P2-G5/ProjectTwo-public/_packaging/NugetPackageDi/nuget/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\Application\\Application.csproj": {
-              "projectPath": "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\Application\\Application.csproj"
+            "D:\\Auré\\DIIAGE\\D3\\P1-P2\\Playlist-Service\\Micro-service-playlist\\Application\\Application.csproj": {
+              "projectPath": "D:\\Auré\\DIIAGE\\D3\\P1-P2\\Playlist-Service\\Micro-service-playlist\\Application\\Application.csproj"
             },
-            "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\Infrastructure\\Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\antonin\\Documents\\DIIAGE\\projet_troisieme_annee\\Projet-1\\micro-service-playlist\\Micro-service-playlist\\Infrastructure\\Infrastructure.csproj"
+            "D:\\Auré\\DIIAGE\\D3\\P1-P2\\Playlist-Service\\Micro-service-playlist\\Infrastructure\\Infrastructure.csproj": {
+              "projectPath": "D:\\Auré\\DIIAGE\\D3\\P1-P2\\Playlist-Service\\Micro-service-playlist\\Infrastructure\\Infrastructure.csproj"
             }
           }
         }
@@ -3857,7 +3861,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.307\\RuntimeIdentifierGraph.json"
       }
     }
   }

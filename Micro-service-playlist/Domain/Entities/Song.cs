@@ -9,6 +9,8 @@
         public string? AlbumTitle { get; set; }
         public string? Preview { get; set; }
         public string? Style { get; set; }
+        public string? Link { get; set; }
+        public int? Duration { get; set; }
         public string? StatusPromoted { get; set; }
         public List<SongPlaylist>? PlaylistSongs { get; set; }
     }

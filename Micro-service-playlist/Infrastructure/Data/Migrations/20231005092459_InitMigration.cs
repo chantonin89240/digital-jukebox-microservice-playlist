@@ -18,7 +18,8 @@ namespace Infrastructure.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     PlayedSongId = table.Column<int>(type: "int", nullable: false),
-                    TotalSong = table.Column<int>(type: "int", nullable: false)
+                    TotalSong = table.Column<int>(type: "int", nullable: false),
+                    BarId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -50,6 +51,8 @@ namespace Infrastructure.Data.Migrations
                     Author = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     AlbumTitle = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Preview = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Link = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Duration = table.Column<int>(type: "int", nullable: false),
                     Style = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     StatusPromoted = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },

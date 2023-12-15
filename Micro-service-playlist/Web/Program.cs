@@ -13,22 +13,6 @@ builder.Services.AddPersistenceServices(builder.Configuration); //DI de la couch
 
 var app = builder.Build();
 
-//builder.Services.AddMediatR(cfg => cfg.RegisterServicesFromAssembly(typeof(Program).Assembly));
-
-//CreateHostBuilder(args).Build().Run();
-
-//static IHostBuilder CreateHostBuilder(string[] args) =>
-//           Host.CreateDefaultBuilder(args)
-//               .ConfigureLogging(logging =>
-//               {
-//                   logging.ClearProviders();
-//                   logging.AddConsole();
-//               })
-//               .ConfigureWebHostDefaults(webBuilder =>
-//               {
-
-//               });
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
