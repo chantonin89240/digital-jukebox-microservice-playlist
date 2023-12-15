@@ -4,33 +4,32 @@ using Domain.Entities;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Web.Controllers
+namespace Web.Controllers;
+
+[ApiController]
+[Route("api/playlists")]
+public class PlaylistController : ControllerBase
 {
-    [ApiController]
-    [Route("api/playlists")]
-    public class PlaylistController : ControllerBase
+    private readonly IMediator _mediator;
+
+    public PlaylistController(IMediator mediator)
     {
-        private readonly IMediator _mediator;
-
-        public PlaylistController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
-        [HttpGet("/bar/{barId}/playlist/{playlistId}")]
-        public async Task<IActionResult> GetPaylistById(int barId, int playlistId)
-        {
-            GetPlaylistDto getPlaylistDto = new GetPlaylistDto() { PlaylistId = playlistId, BarId = barId };
-            var query = new GetPlaylistQuery(getPlaylistDto);
-            var result = await _mediator.Send(query);
-            return Ok(result);
-        }
-
-        //[HttpPost]
-        //public async Task<IActionResult> AddTrack(Playlist playlist, Song song, [FromBody] AddTrackCommand command)
-        //{
-        //    var result = await _mediator.Send(command);
-        //    return Ok(result);
-        //}
+        _mediator = mediator;
     }
+
+    [HttpGet("/bar/{barId}/playlist/{playlistId}")]
+    public async Task<IActionResult> GetPaylistById(int barId, int playlistId)
+    {
+        GetPlaylistDto getPlaylistDto = new GetPlaylistDto() { PlaylistId = playlistId, BarId = barId };
+        var query = new GetPlaylistQuery(getPlaylistDto);
+        var result = await _mediator.Send(query);
+        return Ok(result);
+    }
+
+    //[HttpPost]
+    //public async Task<IActionResult> AddTrack(Playlist playlist, Song song, [FromBody] AddTrackCommand command)
+    //{
+    //    var result = await _mediator.Send(command);
+    //    return Ok(result);
+    //}
 }
