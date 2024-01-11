@@ -44,11 +44,22 @@ public class AddSongCommandHandler : IRequestHandler<AddSongCommand, int>
         _context.Songs.Add(song);
         await _context.SaveChangesAsync(cancellationToken);
 
+        int orderValue;
+        var order = _context.SongPlaylists.Where(e => e.PlaylistId == request.IdPlaylist);
+        if (order.Count() == 0)
+        {
+            orderValue = 1;
+        }
+        else
+        {
+            orderValue = order.Max(e => e.PlaylistOrder) + 1;
+        }
+
         var songPlaylist = new SongPlaylist
         {
             PlaylistId = request.IdPlaylist,
             SongId = song.SongId,
-            PlaylistOrder = _context.SongPlaylists.Where(e => e.PlaylistId == request.IdPlaylist).Max(b => b.PlaylistOrder) + 1
+            PlaylistOrder = orderValue
         };
 
         _context.SongPlaylists.Add(songPlaylist);
