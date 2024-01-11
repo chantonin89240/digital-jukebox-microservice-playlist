@@ -1,4 +1,5 @@
-﻿using Application.Commands.AddTrack;
+﻿using Application.Commands.AddPlaylist;
+using Application.Commands.AddSong;
 using Application.Queries.GetPlaylist;
 using Domain.Entities;
 using MediatR;
@@ -27,10 +28,17 @@ public class PlaylistController : ControllerBase
         return result != null ? Ok(result) : NotFound();
     }
 
-    //[HttpPost]
-    //public async Task<IActionResult> AddTrack(Playlist playlist, Song song, [FromBody] AddTrackCommand command)
-    //{
-    //    var result = await _mediator.Send(command);
-    //    return Ok(result);
-    //}
+    [HttpPost]
+    public async Task<IActionResult> AddPlaylist([FromBody] AddPlaylistCommand command)
+    {
+        int retour = await _mediator.Send(command);
+        return Ok("Playlist " + retour + " add successfully");
+    }
+
+    [HttpPost("song")]
+    public async Task<IActionResult> AddSongInPlaylist([FromBody] AddSongCommand command)
+    {
+        int retour = await _mediator.Send(command);
+        return Ok("Song " + retour + " add successfully");
+    }
 }
