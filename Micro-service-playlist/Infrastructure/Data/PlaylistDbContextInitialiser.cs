@@ -92,35 +92,35 @@ public class PlaylistDbContextInitialiser
 
         // Default data
         // Seed, if necessary
-        if (!_context.Playlists.Any())
-        {
-            _context.Songs.Add(new Song
-            {
-                Title = "test1"
-            });
-            _context.Songs.Add(new Song
-            {
-                Title = "test2"
-            });
-            _context.Songs.Add(new Song
-            {
-                Title = "test3"
-            });
+        //if (!_context.Playlists.Any())
+        //{
+        //    _context.Songs.Add(new Song
+        //    {
+        //        Title = "test1"
+        //    });
+        //    _context.Songs.Add(new Song
+        //    {
+        //        Title = "test2"
+        //    });
+        //    _context.Songs.Add(new Song
+        //    {
+        //        Title = "test3"
+        //    });
 
-            _context.Playlists.Add(new Playlist
-            {
-                Name = "playlistExample",
-                PlayedSongId = 1,
-                PlaylistSongs = new List<SongPlaylist>()
-                {
-                    new SongPlaylist { SongId = 1, PlaylistOrder = 1 },
-                    new SongPlaylist { SongId = 2, PlaylistOrder = 3 },
-                    new SongPlaylist { SongId = 3, PlaylistOrder = 2 },
-                },
-                TotalSong = 3
-            });
+        //    _context.Playlists.Add(new Playlist
+        //    {
+        //        Name = "playlistExample",
+        //        PlayedSongId = 1,
+        //        PlaylistSongs = new List<SongPlaylist>()
+        //        {
+        //            new SongPlaylist { SongId = 1, PlaylistOrder = 1 },
+        //            new SongPlaylist { SongId = 2, PlaylistOrder = 3 },
+        //            new SongPlaylist { SongId = 3, PlaylistOrder = 2 },
+        //        },
+        //        TotalSong = 3
+        //    });
 
-            await _context.SaveChangesAsync();
-        }
+        //    await _context.SaveChangesAsync();
+        //}
     }
 }

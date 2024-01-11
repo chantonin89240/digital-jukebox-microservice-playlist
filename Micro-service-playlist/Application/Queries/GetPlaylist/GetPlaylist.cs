@@ -57,16 +57,6 @@ namespace Application.Queries.GetPlaylist
                 })
                 .FirstOrDefaultAsync();
 
-            
-            var returnedPlaylist = new PlaylistDto() { 
-                PlaylistId = playlistDto.PlaylistId, 
-                Name = playlistDto.Name, 
-                PlayedSongId = playlistDto.PlayedSongId, 
-                TotalSong = playlistDto.TotalSong, 
-                PlaylistSongs = playlistDto.PlaylistSongs, 
-                BarId = playlistDto.BarId
-            };
-
             return playlistDto;
         }
     }

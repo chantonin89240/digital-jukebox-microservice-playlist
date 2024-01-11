@@ -17,13 +17,14 @@ public class PlaylistController : ControllerBase
         _mediator = mediator;
     }
 
-    [HttpGet("/bar/{barId}/playlist/{playlistId}")]
+    [HttpGet("bar/{barId}/playlist/{playlistId}")]
     public async Task<IActionResult> GetPaylistById(int barId, int playlistId)
     {
         GetPlaylistDto getPlaylistDto = new GetPlaylistDto() { PlaylistId = playlistId, BarId = barId };
         var query = new GetPlaylistQuery(getPlaylistDto);
         var result = await _mediator.Send(query);
-        return Ok(result);
+
+        return result != null ? Ok(result) : NotFound();
     }
 
     //[HttpPost]
